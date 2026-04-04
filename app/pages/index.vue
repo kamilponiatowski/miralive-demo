@@ -39,14 +39,20 @@ useSeoMeta({
               najlepszą ochronę dla Ciebie i Twojej rodziny.
             </p>
 
-            <div class="flex flex-col sm:flex-row gap-4">
-              <Button to="/kontakt" size="lg" class="pulse-brand">
-                <Icon name="lucide:phone" class="w-5 h-5 mr-2" />
-                Umów konsultację
-              </Button>
-              <Button to="/uslugi" variant="outline" size="lg">
-                <Icon name="lucide:arrow-right" class="w-5 h-5 mr-2" />
-                Zobacz ofertę
+            <div class="flex flex-col gap-4">
+              <div class="flex flex-col sm:flex-row gap-4">
+                <Button to="/kontakt" size="lg" class="pulse-brand">
+                  <Icon name="lucide:phone" class="w-5 h-5 mr-2" />
+                  Umów konsultację
+                </Button>
+                <Button to="/uslugi" variant="outline" size="lg">
+                  <Icon name="lucide:arrow-right" class="w-5 h-5 mr-2" />
+                  Zobacz ofertę
+                </Button>
+              </div>
+              <Button to="/kontakt#formularz" variant="ghost" size="lg" class="w-full">
+                <Icon name="lucide:message-square" class="w-5 h-5 mr-2" />
+                Zostaw kontakt
               </Button>
             </div>
           </div>
@@ -63,7 +69,7 @@ useSeoMeta({
                 loading="eager"
                 format="webp"
               />
-              <div class="absolute -bottom-4 -left-4 bg-card border border-card-border rounded-xl p-4 shadow-lg">
+              <div class="absolute -bottom-4 -right-4 bg-card/90 backdrop-blur-sm border border-card-border rounded-xl p-4 shadow-lg">
                 <div class="flex items-center gap-3">
                   <div class="icon-glass w-10 h-10">
                     <Icon name="lucide:shield-check" class="w-5 h-5 text-brand" />
@@ -232,9 +238,9 @@ useSeoMeta({
                 <Icon name="lucide:phone" class="w-5 h-5 mr-2" />
                 {{ business.contact.phone[0] }}
               </Button>
-              <Button :href="`mailto:${business.contact.email}`" variant="outline" size="lg">
-                <Icon name="lucide:mail" class="w-5 h-5 mr-2" />
-                Napisz do nas
+              <Button to="/kontakt#formularz" variant="outline" size="lg">
+                <Icon name="lucide:message-square" class="w-5 h-5 mr-2" />
+                Zostaw kontakt
               </Button>
             </div>
           </div>

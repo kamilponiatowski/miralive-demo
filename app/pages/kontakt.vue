@@ -8,6 +8,47 @@ useSeoMeta({
   ogTitle: `Kontakt — ${business.name}`,
   ogDescription: `Umów bezpłatną konsultację ubezpieczeniową. Telefon: ${business.contact.phone[0]}.`,
 })
+
+const formData = reactive({
+  name: '',
+  phone: '',
+  email: '',
+  message: '',
+})
+
+const formStatus = ref<'idle' | 'sending' | 'success' | 'error'>('idle')
+
+const submitForm = async () => {
+  formStatus.value = 'sending'
+  try {
+    const response = await fetch('https://formsubmit.co/ajax/miroslawaponiatowska.miralive@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        message: formData.message,
+        _subject: `Nowe zapytanie ze strony Miralive od ${formData.name}`,
+        _template: 'table',
+      }),
+    })
+    if (response.ok) {
+      formStatus.value = 'success'
+      formData.name = ''
+      formData.phone = ''
+      formData.email = ''
+      formData.message = ''
+    } else {
+      formStatus.value = 'error'
+    }
+  } catch {
+    formStatus.value = 'error'
+  }
+}
 </script>
 
 <template>
@@ -82,6 +123,15 @@ useSeoMeta({
                 {{ business.address.street }}<br>
                 {{ business.address.postalCode }} {{ business.address.city }}
               </a>
+              <a
+                :href="business.social.googleMaps"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:underline transition-all duration-300"
+              >
+                <Icon name="lucide:navigation" class="w-4 h-4" />
+                Nawiguj
+              </a>
             </div>
           </Card>
         </div>
@@ -126,10 +176,19 @@ useSeoMeta({
     <!-- Map -->
     <section class="py-12 md:py-16 bg-page-alt">
       <Container>
-        <div class="text-center mb-8">
-          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-ink mb-4">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-ink">
             Znajdź nas na mapie
           </h2>
+          <a
+            :href="business.social.googleMaps"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-xl border-2 border-brand text-brand hover:bg-brand hover:text-white transition-all duration-300"
+          >
+            <Icon name="lucide:navigation" class="w-4 h-4" />
+            Nawiguj do nas
+          </a>
         </div>
         <div class="rounded-2xl overflow-hidden shadow-lg border border-card-border aspect-video">
           <iframe
@@ -142,6 +201,120 @@ useSeoMeta({
             referrerpolicy="no-referrer-when-downgrade"
             title="Mapa lokalizacji Miralive"
           />
+        </div>
+      </Container>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="formularz" class="py-12 md:py-16 scroll-mt-24">
+      <Container>
+        <div class="max-w-2xl mx-auto">
+          <div class="text-center mb-8">
+            <Badge color="brand" class="mb-4">Formularz</Badge>
+            <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-ink mb-4">
+              Zostaw kontakt — oddzwonimy
+            </h2>
+            <p class="text-ink-muted">
+              Wypełnij formularz, a skontaktujemy się z Tobą w ciągu 24 godzin.
+            </p>
+          </div>
+
+          <!-- Success -->
+          <div v-if="formStatus === 'success'" class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-2xl p-8 text-center">
+            <div class="icon-glass w-16 h-16 mx-auto mb-4">
+              <Icon name="lucide:check-circle" class="w-8 h-8 text-green-600 dark:text-green-400" />
+            </div>
+            <h3 class="text-xl font-semibold text-ink mb-2">Wiadomość wysłana!</h3>
+            <p class="text-ink-muted mb-6">Dziękujemy za kontakt. Odezwiemy się najszybciej jak to możliwe.</p>
+            <Button variant="outline" size="md" @click="formStatus = 'idle'">
+              Wyślij kolejną wiadomość
+            </Button>
+          </div>
+
+          <!-- Form -->
+          <Card v-else :hover="false">
+            <form @submit.prevent="submitForm" class="space-y-5">
+              <div>
+                <label for="form-name" class="block text-sm font-medium text-ink mb-1.5">
+                  Imię i nazwisko <span class="text-red-500">*</span>
+                </label>
+                <input
+                  id="form-name"
+                  v-model="formData.name"
+                  type="text"
+                  required
+                  autocomplete="name"
+                  placeholder="Jan Kowalski"
+                  class="w-full px-4 py-3 rounded-xl border border-card-border bg-page text-ink placeholder:text-ink-muted/50 transition-all duration-300 focus:border-brand focus:ring-2 focus:ring-brand/20 focus:outline-none"
+                />
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="form-phone" class="block text-sm font-medium text-ink mb-1.5">
+                    Telefon <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    id="form-phone"
+                    v-model="formData.phone"
+                    type="tel"
+                    required
+                    autocomplete="tel"
+                    placeholder="600 000 000"
+                    class="w-full px-4 py-3 rounded-xl border border-card-border bg-page text-ink placeholder:text-ink-muted/50 transition-all duration-300 focus:border-brand focus:ring-2 focus:ring-brand/20 focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label for="form-email" class="block text-sm font-medium text-ink mb-1.5">
+                    Email
+                  </label>
+                  <input
+                    id="form-email"
+                    v-model="formData.email"
+                    type="email"
+                    autocomplete="email"
+                    placeholder="jan@example.com"
+                    class="w-full px-4 py-3 rounded-xl border border-card-border bg-page text-ink placeholder:text-ink-muted/50 transition-all duration-300 focus:border-brand focus:ring-2 focus:ring-brand/20 focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="form-message" class="block text-sm font-medium text-ink mb-1.5">
+                  Wiadomość
+                </label>
+                <textarea
+                  id="form-message"
+                  v-model="formData.message"
+                  rows="4"
+                  placeholder="Proszę o kontakt."
+                  class="w-full px-4 py-3 rounded-xl border border-card-border bg-page text-ink placeholder:text-ink-muted/50 transition-all duration-300 focus:border-brand focus:ring-2 focus:ring-brand/20 focus:outline-none resize-y"
+                />
+              </div>
+
+              <!-- Error -->
+              <div v-if="formStatus === 'error'" class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4 text-sm text-red-700 dark:text-red-400 flex items-center gap-2">
+                <Icon name="lucide:alert-circle" class="w-5 h-5 shrink-0" />
+                Wystąpił błąd. Spróbuj ponownie lub zadzwoń bezpośrednio.
+              </div>
+
+              <div class="flex flex-col sm:flex-row items-center gap-4">
+                <Button
+                  type="submit"
+                  size="lg"
+                  class="w-full sm:w-auto"
+                  :class="{ 'opacity-70 pointer-events-none': formStatus === 'sending' }"
+                >
+                  <Icon v-if="formStatus === 'sending'" name="lucide:loader-2" class="w-5 h-5 mr-2 animate-spin" />
+                  <Icon v-else name="lucide:send" class="w-5 h-5 mr-2" />
+                  {{ formStatus === 'sending' ? 'Wysyłam...' : 'Wyślij wiadomość' }}
+                </Button>
+                <p class="text-xs text-ink-muted">
+                  Odpowiadamy w ciągu 24 godzin w dni robocze.
+                </p>
+              </div>
+            </form>
+          </Card>
         </div>
       </Container>
     </section>

@@ -29,7 +29,7 @@ export default defineNuxtConfig({
   site: {
     url: 'https://miralive.pl',
     name: 'Miralive — Specjalistyczne Doradztwo Ubezpieczeniowe',
-    description: 'Miralive to nowoczesna agencja ubezpieczeniowa specjalizująca się w ubezpieczeniach życiowych, zdrowotnych, komunikacyjnych i firmowych. Ekspert Mirosława Poniatowska — indywidualne doradztwo w województwie kujawsko-pomorskim.',
+    description: 'Miralive to nowoczesna agencja ubezpieczeniowa specjalizująca się w ubezpieczeniach życiowych, zdrowotnych, komunikacyjnych i firmowych. Ekspert Mirosława Poniatowska — indywidualne doradztwo we Włocławku i województwie kujawsko-pomorskim.',
     defaultLocale: 'pl',
   },
 

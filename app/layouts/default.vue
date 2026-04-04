@@ -167,6 +167,17 @@ onMounted(() => {
                     {{ business.contact.email }}
                   </a>
                 </li>
+                <li>
+                  <a
+                    :href="business.social.googleMaps"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-sm text-ink-muted hover:text-brand transition-all duration-300 flex items-center gap-2"
+                  >
+                    <Icon name="lucide:navigation" class="w-4 h-4" />
+                    Nawiguj do nas
+                  </a>
+                </li>
               </ul>
             </div>
 

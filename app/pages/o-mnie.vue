@@ -156,10 +156,16 @@ useSeoMeta({
           <p class="text-ink-muted mb-8">
             Skontaktuj się ze mną — przeprowadzę bezpłatną analizę potrzeb i pomogę wybrać najlepszą ochronę.
           </p>
-          <Button to="/kontakt" size="lg" class="pulse-brand">
-            <Icon name="lucide:phone" class="w-5 h-5 mr-2" />
-            Umów konsultację
-          </Button>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button to="/kontakt" size="lg" class="pulse-brand">
+              <Icon name="lucide:phone" class="w-5 h-5 mr-2" />
+              Umów konsultację
+            </Button>
+            <Button to="/kontakt#formularz" variant="outline" size="lg">
+              <Icon name="lucide:message-square" class="w-5 h-5 mr-2" />
+              Zostaw kontakt
+            </Button>
+          </div>
         </div>
       </Container>
     </section>
