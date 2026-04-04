@@ -8,6 +8,15 @@ export default defineNuxtConfig({
 
   extends: ['./layers/core', './layers/seo'],
 
+  app: {
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      ],
+    },
+  },
+
   modules: [
     '@nuxtjs/seo',
     '@nuxtjs/color-mode',
@@ -46,7 +55,12 @@ export default defineNuxtConfig({
     ],
   },
 
-  ogImage: { zeroRuntime: true },
+  ogImage: {
+    zeroRuntime: true,
+    defaults: {
+      renderer: 'satori',
+    },
+  },
 
   vite: {
     plugins: [tailwindcss()],

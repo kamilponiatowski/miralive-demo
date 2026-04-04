@@ -110,6 +110,16 @@ onMounted(() => {
       <slot />
     </main>
 
+    <!-- First-visit contact popup -->
+    <ClientOnly>
+      <ContactPopup />
+    </ClientOnly>
+
+    <!-- Cookies consent banner -->
+    <ClientOnly>
+      <CookiesBanner />
+    </ClientOnly>
+
     <!-- Footer -->
     <footer class="bg-page-alt border-t border-card-border">
       <Container>
@@ -202,7 +212,17 @@ onMounted(() => {
           </div>
 
           <!-- Social & Copyright -->
-          <div class="mt-12 pt-8 border-t border-card-border flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="mt-12 pt-8 border-t border-card-border">
+            <div class="flex flex-wrap items-center justify-center gap-4 mb-6 text-sm">
+              <NuxtLink to="/polityka-prywatnosci" class="text-ink-muted hover:text-brand transition-all duration-300">
+                Polityka prywatności
+              </NuxtLink>
+              <span class="text-card-border">|</span>
+              <NuxtLink to="/polityka-cookies" class="text-ink-muted hover:text-brand transition-all duration-300">
+                Polityka cookies
+              </NuxtLink>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
             <ClientOnly>
               <p class="text-sm text-ink-muted">
                 &copy; {{ currentYear }} {{ business.legalName }}. Wszelkie prawa zastrzeżone.
@@ -234,6 +254,7 @@ onMounted(() => {
               >
                 <Icon name="lucide:map-pin" class="w-5 h-5" />
               </a>
+            </div>
             </div>
           </div>
         </div>

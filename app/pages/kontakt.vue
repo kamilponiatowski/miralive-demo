@@ -14,6 +14,7 @@ const formData = reactive({
   phone: '',
   email: '',
   message: '',
+  privacy: false,
 })
 
 const formStatus = ref<'idle' | 'sending' | 'success' | 'error'>('idle')
@@ -42,6 +43,7 @@ const submitForm = async () => {
       formData.phone = ''
       formData.email = ''
       formData.message = ''
+      formData.privacy = false
     } else {
       formStatus.value = 'error'
     }
@@ -69,133 +71,6 @@ const submitForm = async () => {
       </Container>
     </section>
 
-    <!-- Contact Cards -->
-    <section class="py-12 md:py-16">
-      <Container>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <!-- Phone -->
-          <Card>
-            <div class="text-center">
-              <div class="icon-glass w-14 h-14 mx-auto mb-4">
-                <Icon name="lucide:phone" class="w-7 h-7 text-brand" />
-              </div>
-              <h2 class="font-semibold text-ink mb-2">Telefon</h2>
-              <a
-                v-for="phone in business.contact.phone"
-                :key="phone"
-                :href="`tel:${phone.replace(/\\s/g, '')}`"
-                class="block text-lg text-brand font-medium hover:underline transition-all duration-300"
-              >
-                {{ phone }}
-              </a>
-            </div>
-          </Card>
-
-          <!-- Email -->
-          <Card>
-            <div class="text-center">
-              <div class="icon-glass w-14 h-14 mx-auto mb-4">
-                <Icon name="lucide:mail" class="w-7 h-7 text-brand" />
-              </div>
-              <h2 class="font-semibold text-ink mb-2">Email</h2>
-              <a
-                :href="`mailto:${business.contact.email}`"
-                class="text-lg text-brand font-medium hover:underline transition-all duration-300"
-              >
-                {{ business.contact.email }}
-              </a>
-            </div>
-          </Card>
-
-          <!-- Address -->
-          <Card>
-            <div class="text-center">
-              <div class="icon-glass w-14 h-14 mx-auto mb-4">
-                <Icon name="lucide:map-pin" class="w-7 h-7 text-brand" />
-              </div>
-              <h2 class="font-semibold text-ink mb-2">Adres</h2>
-              <a
-                :href="business.social.googleMaps"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-lg text-brand font-medium hover:underline transition-all duration-300"
-              >
-                {{ business.address.street }}<br>
-                {{ business.address.postalCode }} {{ business.address.city }}
-              </a>
-            </div>
-          </Card>
-        </div>
-
-        <!-- Opening Hours -->
-        <div class="max-w-lg mx-auto">
-          <Card :hover="false">
-            <div class="text-center mb-6">
-              <h2 class="text-xl font-semibold text-ink mb-2">Godziny otwarcia</h2>
-              <ClientOnly>
-                <Badge :color="isOpen ? 'green' : 'brand'" :dot="true">
-                  {{ statusText }}
-                </Badge>
-                <template #fallback>
-                  <Badge color="gray">Sprawdzam...</Badge>
-                </template>
-              </ClientOnly>
-            </div>
-            <div class="space-y-3">
-              <div
-                v-for="schedule in business.hours.regular"
-                :key="schedule.days"
-                class="flex justify-between items-center py-2 border-b border-card-border last:border-0"
-              >
-                <span class="font-medium text-ink">{{ schedule.days }}</span>
-                <span class="text-ink-muted">{{ schedule.open }} – {{ schedule.close }}</span>
-              </div>
-              <div
-                v-for="day in business.hours.closed"
-                :key="day"
-                class="flex justify-between items-center py-2"
-              >
-                <span class="font-medium text-ink">{{ day }}</span>
-                <span class="text-ink-muted">Zamknięte</span>
-              </div>
-            </div>
-          </Card>
-        </div>
-      </Container>
-    </section>
-
-    <!-- Map -->
-    <section class="py-12 md:py-16 bg-page-alt">
-      <Container>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-ink">
-            Znajdź nas na mapie
-          </h2>
-          <a
-            :href="business.social.googleMaps"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-xl border-2 border-brand text-brand hover:bg-brand hover:text-white transition-all duration-300"
-          >
-            <Icon name="lucide:navigation" class="w-4 h-4" />
-            Nawiguj do nas
-          </a>
-        </div>
-        <div class="rounded-2xl overflow-hidden shadow-lg border border-card-border aspect-video">
-          <iframe
-            :src="`https://maps.google.com/maps?q=${business.geo.latitude},${business.geo.longitude}&z=15&output=embed`"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Mapa lokalizacji Miralive"
-          />
-        </div>
-      </Container>
-    </section>
-
     <!-- Contact Form -->
     <section id="formularz" class="py-12 md:py-16 scroll-mt-24">
       <Container>
@@ -203,10 +78,10 @@ const submitForm = async () => {
           <div class="text-center mb-8">
             <Badge color="brand" class="mb-4">Formularz</Badge>
             <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-ink mb-4">
-              Zostaw kontakt — oddzwonimy
+              Zostaw kontakt — oddzwonię
             </h2>
             <p class="text-ink-muted">
-              Wypełnij formularz, a skontaktujemy się z Tobą w ciągu 24 godzin.
+              Wypełnij formularz, a skontaktuję się z Tobą w ciągu 24 godzin.
             </p>
           </div>
 
@@ -283,6 +158,21 @@ const submitForm = async () => {
                 />
               </div>
 
+              <!-- Privacy consent -->
+              <div class="flex items-start gap-3">
+                <input
+                  id="form-privacy"
+                  v-model="formData.privacy"
+                  type="checkbox"
+                  required
+                  class="mt-1 h-4 w-4 rounded border-card-border text-brand focus:ring-brand/20"
+                />
+                <label for="form-privacy" class="text-sm text-ink-muted leading-relaxed">
+                  Zapoznałem/am się z <NuxtLink to="/polityka-prywatnosci" class="text-brand hover:underline font-medium" target="_blank">Polityką Prywatności</NuxtLink>
+                  i wyrażam zgodę na przetwarzanie moich danych osobowych w celu odpowiedzi na zapytanie. <span class="text-red-500">*</span>
+                </label>
+              </div>
+
               <!-- Error -->
               <div v-if="formStatus === 'error'" class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4 text-sm text-red-700 dark:text-red-400 flex items-center gap-2">
                 <Icon name="lucide:alert-circle" class="w-5 h-5 shrink-0" />
@@ -306,6 +196,133 @@ const submitForm = async () => {
               </div>
             </form>
           </Card>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Contact Cards -->
+    <section class="py-12 md:py-16">
+      <Container>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <!-- Phone -->
+          <Card>
+            <div class="text-center">
+              <div class="icon-glass w-14 h-14 mx-auto mb-4">
+                <Icon name="lucide:phone" class="w-7 h-7 text-brand" />
+              </div>
+              <h2 class="font-semibold text-ink mb-2">Telefon</h2>
+              <a
+                v-for="phone in business.contact.phone"
+                :key="phone"
+                :href="`tel:${phone.replace(/\\s/g, '')}`"
+                class="block text-lg text-brand font-medium hover:underline transition-all duration-300"
+              >
+                {{ phone }}
+              </a>
+            </div>
+          </Card>
+
+          <!-- Email -->
+          <Card>
+            <div class="text-center">
+              <div class="icon-glass w-14 h-14 mx-auto mb-4">
+                <Icon name="lucide:mail" class="w-7 h-7 text-brand" />
+              </div>
+              <h2 class="font-semibold text-ink mb-2">Email</h2>
+              <a
+                :href="`mailto:${business.contact.email}`"
+                class="text-lg text-brand font-medium hover:underline transition-all duration-300"
+              >
+                {{ business.contact.email }}
+              </a>
+            </div>
+          </Card>
+
+          <!-- Address -->
+          <Card>
+            <div class="text-center">
+              <div class="icon-glass w-14 h-14 mx-auto mb-4">
+                <Icon name="lucide:map-pin" class="w-7 h-7 text-brand" />
+              </div>
+              <h2 class="font-semibold text-ink mb-2">Adres</h2>
+              <a
+                :href="business.social.googleMaps"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-lg text-brand font-medium hover:underline transition-all duration-300"
+              >
+                {{ business.address.street }}<br>
+                {{ business.address.postalCode }} {{ business.address.city }}
+              </a>
+            </div>
+          </Card>
+        </div>
+
+        <!-- Opening Hours -->
+        <div class="max-w-lg mx-auto">
+          <Card :hover="false">
+            <div class="text-center mb-6">
+              <h2 class="text-xl font-semibold text-ink mb-2">Godziny otwarcia</h2>
+              <ClientOnly>
+                <Badge :color="isOpen ? 'green' : 'red'" :dot="true">
+                  {{ statusText }}
+                </Badge>
+                <template #fallback>
+                  <Badge color="gray">Sprawdzam...</Badge>
+                </template>
+              </ClientOnly>
+            </div>
+            <div class="space-y-3">
+              <div
+                v-for="schedule in business.hours.regular"
+                :key="schedule.days"
+                class="flex justify-between items-center py-2 border-b border-card-border last:border-0"
+              >
+                <span class="font-medium text-ink">{{ schedule.days }}</span>
+                <span class="text-ink-muted">{{ schedule.open }} – {{ schedule.close }}</span>
+              </div>
+              <div
+                v-for="day in business.hours.closed"
+                :key="day"
+                class="flex justify-between items-center py-2"
+              >
+                <span class="font-medium text-ink">{{ day }}</span>
+                <span class="text-ink-muted">Zamknięte</span>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Map -->
+    <section class="py-12 md:py-16 bg-page-alt">
+      <Container>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-ink">
+            Znajdź nas na mapie
+          </h2>
+          <a
+            :href="business.social.googleMaps"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-xl border-2 border-brand text-brand hover:bg-brand hover:text-white transition-all duration-300"
+          >
+            <Icon name="lucide:navigation" class="w-4 h-4" />
+            Nawiguj do nas
+          </a>
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-lg border border-card-border aspect-video">
+          <iframe
+            :src="`https://maps.google.com/maps?q=${business.geo.latitude},${business.geo.longitude}&z=15&output=embed`"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa lokalizacji Miralive"
+          />
         </div>
       </Container>
     </section>

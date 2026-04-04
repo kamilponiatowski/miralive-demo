@@ -157,7 +157,7 @@ useSeoMeta({
             Skontaktuj się ze mną — przeprowadzę bezpłatną analizę potrzeb i pomogę wybrać najlepszą ochronę.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button to="/kontakt" size="lg" class="pulse-brand">
+            <Button to="/kontakt#formularz" size="lg" class="pulse-brand">
               <Icon name="lucide:phone" class="w-5 h-5 mr-2" />
               Umów konsultację
             </Button>

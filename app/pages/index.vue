@@ -21,7 +21,7 @@ useSeoMeta({
           <!-- Left: Content -->
           <div class="order-2 lg:order-1">
             <ClientOnly>
-              <Badge :color="isOpen ? 'green' : 'brand'" :dot="true" class="mb-6">
+              <Badge :color="isOpen ? 'green' : 'red'" :dot="true" class="mb-6">
                 {{ statusText }}
               </Badge>
               <template #fallback>
@@ -31,7 +31,7 @@ useSeoMeta({
 
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink leading-tight mb-6">
               Twoje bezpieczeństwo,
-              <span class="text-brand">nasza specjalizacja</span>
+              <span class="text-brand">moja specjalizacja</span>
             </h1>
 
             <p class="text-lg md:text-xl text-ink-muted leading-relaxed mb-8 max-w-xl">
@@ -41,7 +41,7 @@ useSeoMeta({
 
             <div class="flex flex-col gap-4">
               <div class="flex flex-col sm:flex-row gap-4">
-                <Button to="/kontakt" size="lg" class="pulse-brand">
+                <Button to="/kontakt#formularz" size="lg" class="pulse-brand">
                   <Icon name="lucide:phone" class="w-5 h-5 mr-2" />
                   Umów konsultację
                 </Button>

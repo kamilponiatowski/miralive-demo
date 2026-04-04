@@ -165,7 +165,7 @@ const serviceDetails: Record<string, { features: string[]; cta: string }> = {
           <p class="text-ink-muted mb-8">
             Zadzwoń lub napisz — przeprowadzimy bezpłatną analizę potrzeb i dobierzemy optymalną ochronę.
           </p>
-          <Button to="/kontakt" size="lg" class="pulse-brand">
+          <Button to="/kontakt#formularz" size="lg" class="pulse-brand">
             <Icon name="lucide:phone" class="w-5 h-5 mr-2" />
             Umów bezpłatną konsultację
           </Button>
