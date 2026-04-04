@@ -66,10 +66,9 @@ export const useBusinessData = (): BusinessData => {
     },
     hours: {
       regular: [
-        { days: 'Pon-Pt', open: '09:00', close: '17:00' },
-        { days: 'Sob', open: '10:00', close: '13:00' },
+        { days: 'Pon-Pt', open: '09:00', close: '16:00' },
       ],
-      closed: ['Nd'],
+      closed: ['Sob', 'Nd'],
     },
     services: [
       {

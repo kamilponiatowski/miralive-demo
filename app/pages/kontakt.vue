@@ -123,15 +123,6 @@ const submitForm = async () => {
                 {{ business.address.street }}<br>
                 {{ business.address.postalCode }} {{ business.address.city }}
               </a>
-              <a
-                :href="business.social.googleMaps"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:underline transition-all duration-300"
-              >
-                <Icon name="lucide:navigation" class="w-4 h-4" />
-                Nawiguj
-              </a>
             </div>
           </Card>
         </div>
@@ -287,7 +278,7 @@ const submitForm = async () => {
                   id="form-message"
                   v-model="formData.message"
                   rows="4"
-                  placeholder="Proszę o kontakt."
+                  placeholder="Czego dotyczy Twoje zapytanie? (opcjonalnie)"
                   class="w-full px-4 py-3 rounded-xl border border-card-border bg-page text-ink placeholder:text-ink-muted/50 transition-all duration-300 focus:border-brand focus:ring-2 focus:ring-brand/20 focus:outline-none resize-y"
                 />
               </div>

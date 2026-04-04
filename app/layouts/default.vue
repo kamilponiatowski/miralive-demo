@@ -57,10 +57,6 @@ onMounted(() => {
           <!-- Desktop actions -->
           <div class="hidden lg:flex items-center gap-3">
             <ColorModeToggle />
-            <Button to="/kontakt" size="md">
-              <Icon name="lucide:phone" class="w-4 h-4 mr-2" />
-              Kontakt
-            </Button>
           </div>
 
           <!-- Mobile actions -->
