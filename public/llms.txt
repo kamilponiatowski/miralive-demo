@@ -1,0 +1,30 @@
+# Miralive
+> Specjalistyczne doradztwo ubezpieczeniowe — ubezpieczenia zyciowe, zdrowotne, komunikacyjne i firmowe.
+
+## Contact
+- Address: ul. Dworcowa 12, 85-009 Bydgoszcz, kujawsko-pomorskie, Poland
+- Phone: +48 500 123 456
+- Email: kontakt@miralive.pl
+- Website: https://miralive.pl
+
+## Hours
+- Mon-Fri: 09:00 - 17:00
+- Sat: 10:00 - 13:00
+- Sun: Closed
+
+## About
+Miralive is an insurance agency based in Bydgoszcz, Poland, led by Miroslawa Poniatowska. We specialize in life and health insurance, offering personalized advisory services. We compare offers from 20+ insurance companies to find the best coverage for individuals, families, and businesses.
+
+## Services
+- [Life & Health Insurance](https://miralive.pl/uslugi#ubezpieczenia-zyciowe) — income protection, critical illness, second medical opinion, savings plans, mortgage insurance
+- [Auto Insurance](https://miralive.pl/uslugi#ubezpieczenia-komunikacyjne) — OC, AC, Assistance, NNW packages
+- [Business Insurance](https://miralive.pl/uslugi#ubezpieczenia-firmowe) — professional liability, property, group life, fleet insurance
+- [Medical Professional Liability](https://miralive.pl/uslugi#oc-medyczne) — OC for doctors, nurses, paramedics, physiotherapists
+- [Property Insurance](https://miralive.pl/uslugi#ubezpieczenia-majatkowe) — homes, apartments, vacation homes
+- [School & Travel Insurance](https://miralive.pl/uslugi#ubezpieczenia-szkolne) — NNW for children, travel insurance
+
+## Insurance Partners
+Vienna Life, Ergo Hestia, Generali, Allianz, PZU, WARTA, InterRisk, Inter Polska, UNIQA, Nationale-Nederlanden, COMPENSA, LINK4, Proama, WIENER, TUZ, AGRO TUW, Leadenhall, Prevoir, TRASTI, BEZPIECZNY
+
+## More
+- [Full documentation](https://miralive.pl/llms-full.txt)
