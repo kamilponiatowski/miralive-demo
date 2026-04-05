@@ -18,6 +18,8 @@
     "@nuxtjs/color-mode": "^4.0.0",
     "@nuxtjs/seo": "^5.1.0",
     "nuxt": "^4.4.2",
+    "resend": "^6.10.0",
+    "satori": "^0.26.0",
     "tailwindcss": "^4.2.2",
     "vue": "^3.5.31",
     "vue-router": "^5.0.4"

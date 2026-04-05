@@ -47,7 +47,7 @@ export const useBusinessData = (): BusinessData => {
     type: 'InsuranceAgency',
     description: 'Specjalistyczne doradztwo ubezpieczeniowe — ubezpieczenia życiowe, zdrowotne, komunikacyjne i firmowe.',
     longDescription: 'Miralive to nowoczesna agencja ubezpieczeniowa prowadzona przez Mirosławę Poniatowską, specjalizująca się w ubezpieczeniach życiowych i zdrowotnych. Oferuję indywidualną analizę potrzeb, porównanie ofert od kilkunastu towarzystw ubezpieczeniowych oraz wsparcie na każdym etapie — od wyboru polisy po likwidację szkody. Działam we Włocławku i województwie kujawsko-pomorskim, łącząc lokalne zaufanie z nowoczesnym podejściem do doradztwa.',
-    foundedYear: 2015,
+    foundedYear: 2008,
     slogan: 'Twoje bezpieczeństwo, moja specjalizacja',
     address: {
       street: 'ul. Spółdzielcza 3',

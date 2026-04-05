@@ -39,19 +39,14 @@ const submitForm = async () => {
   if (!validateForm()) return
   formStatus.value = 'sending'
   try {
-    const response = await fetch('https://formsubmit.co/ajax/kontakt@miralive.pl', {
+    const response = await fetch('/api/contact', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         name: formData.name,
         phone: formData.phone,
         email: formData.email,
         message: formData.message,
-        _subject: `Nowe zapytanie ze strony Miralive od ${formData.name}`,
-        _template: 'table',
       }),
     })
     if (response.ok) {
