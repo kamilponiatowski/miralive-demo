@@ -117,7 +117,7 @@ useSeoMeta({
             <li><strong>Prawo do cofnięcia zgody</strong> — w dowolnym momencie, bez wpływu na zgodność z prawem wcześniejszego przetwarzania</li>
           </ul>
           <p>
-            Aby skorzystać z powyższych praw, skontaktuj się z nami: <a :href="`mailto:${business.contact.email}`">{{ business.contact.email }}</a>.
+            Aby skorzystać z powyższych praw, skontaktuj się ze mną: <a :href="`mailto:${business.contact.email}`">{{ business.contact.email }}</a>.
           </p>
 
           <h2>8. Prawo skargi do organu nadzorczego</h2>
@@ -129,7 +129,7 @@ useSeoMeta({
 
           <h2>9. Dobrowolność podania danych</h2>
           <p>
-            Podanie danych osobowych jest dobrowolne, ale niezbędne do skontaktowania się z nami
+            Podanie danych osobowych jest dobrowolne, ale niezbędne do skontaktowania się ze mną
             za pośrednictwem formularza kontaktowego lub nawiązania współpracy.
           </p>
 

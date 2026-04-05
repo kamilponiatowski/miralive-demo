@@ -35,7 +35,7 @@ useSeoMeta({
             </h1>
 
             <p class="text-lg md:text-xl text-ink-muted leading-relaxed mb-8 max-w-xl">
-              {{ business.description }} Porównujemy oferty od {{ business.partners.length }}+ towarzystw, aby znaleźć
+              {{ business.description }} Porównuję oferty od {{ business.partners.length }}+ towarzystw, aby znaleźć
               najlepszą ochronę dla Ciebie i Twojej rodziny.
             </p>
 
@@ -90,7 +90,7 @@ useSeoMeta({
     <section class="bg-page-alt py-8 border-y border-card-border overflow-hidden">
       <Container>
         <p class="text-center text-xs font-medium text-ink-muted uppercase tracking-widest mb-6">
-          Współpracujemy z czołowymi towarzystwami
+          Współpracuję z czołowymi towarzystwami
         </p>
       </Container>
       <div class="relative overflow-hidden">
@@ -112,12 +112,12 @@ useSeoMeta({
     <section class="py-12 md:py-16">
       <Container>
         <div class="text-center mb-12">
-          <Badge color="brand" class="mb-4">Nasza oferta</Badge>
+          <Badge color="brand" class="mb-4">Moja oferta</Badge>
           <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-ink mb-4">
             Kompleksowa ochrona ubezpieczeniowa
           </h2>
           <p class="text-lg text-ink-muted max-w-2xl mx-auto">
-            Od ubezpieczeń życiowych po ochronę majątku — znajdziemy rozwiązanie idealne dla Twojej sytuacji.
+            Od ubezpieczeń życiowych po ochronę majątku — znajdę rozwiązanie idealne dla Twojej sytuacji.
           </p>
         </div>
 
@@ -184,7 +184,7 @@ useSeoMeta({
           <div class="flex justify-center">
             <div class="relative">
               <NuxtImg
-                src="/images/hero.png"
+                src="/images/poznajmy-sie.png"
                 alt="Mirosława Poniatowska — ekspert ubezpieczeniowy Miralive"
                 width="500"
                 height="360"
@@ -230,7 +230,7 @@ useSeoMeta({
               Porozmawiajmy o Twoim ubezpieczeniu
             </h2>
             <p class="text-ink-muted mb-8 max-w-md mx-auto">
-              Bezpłatna konsultacja. Porównamy oferty i znajdziemy najlepszą ochronę
+              Bezpłatna konsultacja. Porównam oferty i znajdę najlepszą ochronę
               dopasowaną do Twoich potrzeb i budżetu.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">

@@ -27,7 +27,7 @@ useSeoMeta({
           </div>
           <div class="flex justify-center">
             <NuxtImg
-              src="/images/hero.png"
+              src="/images/poznajmy-sie.png"
               alt="Mirosława Poniatowska — ekspert ubezpieczeniowy Miralive"
               width="480"
               height="340"

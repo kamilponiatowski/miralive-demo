@@ -22,7 +22,7 @@ const formStatus = ref<'idle' | 'sending' | 'success' | 'error'>('idle')
 const submitForm = async () => {
   formStatus.value = 'sending'
   try {
-    const response = await fetch('https://formsubmit.co/ajax/miroslawaponiatowska.miralive@gmail.com', {
+    const response = await fetch('https://formsubmit.co/ajax/kontakt@miralive.pl', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -39,6 +39,7 @@ const submitForm = async () => {
     })
     if (response.ok) {
       formStatus.value = 'success'
+      localStorage.setItem('miralive_form_sent', '1')
       formData.name = ''
       formData.phone = ''
       formData.email = ''
@@ -61,11 +62,11 @@ const submitForm = async () => {
         <div class="text-center max-w-3xl mx-auto">
           <Badge color="brand" class="mb-4">Kontakt</Badge>
           <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink mb-4">
-            Skontaktuj się z nami
+            Skontaktuj się ze mną
           </h1>
           <p class="text-lg text-ink-muted leading-relaxed">
-            Zadzwoń, napisz lub odwiedź nas osobiście. Bezpłatna konsultacja ubezpieczeniowa
-            — przeanalizujemy Twoje potrzeby i dobierzemy najlepszą ochronę.
+            Zadzwoń, napisz lub odwiedź mnie osobiście. Bezpłatna konsultacja ubezpieczeniowa
+            — przeanalizuję Twoje potrzeby i dobiorę najlepszą ochronę.
           </p>
         </div>
       </Container>
@@ -91,7 +92,7 @@ const submitForm = async () => {
               <Icon name="lucide:check-circle" class="w-8 h-8 text-green-600 dark:text-green-400" />
             </div>
             <h3 class="text-xl font-semibold text-ink mb-2">Wiadomość wysłana!</h3>
-            <p class="text-ink-muted mb-6">Dziękujemy za kontakt. Odezwiemy się najszybciej jak to możliwe.</p>
+            <p class="text-ink-muted mb-6">Dziękuję za kontakt. Odezwę się najszybciej jak to możliwe.</p>
             <Button variant="outline" size="md" @click="formStatus = 'idle'">
               Wyślij kolejną wiadomość
             </Button>
@@ -191,7 +192,7 @@ const submitForm = async () => {
                   {{ formStatus === 'sending' ? 'Wysyłam...' : 'Wyślij wiadomość' }}
                 </Button>
                 <p class="text-xs text-ink-muted">
-                  Odpowiadamy w ciągu 24 godzin w dni robocze.
+                  Odpowiadam w ciągu 24 godzin w dni robocze.
                 </p>
               </div>
             </form>
@@ -300,7 +301,7 @@ const submitForm = async () => {
       <Container>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
           <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-ink">
-            Znajdź nas na mapie
+            Znajdź mnie na mapie
           </h2>
           <a
             :href="business.social.googleMaps"
@@ -309,7 +310,7 @@ const submitForm = async () => {
             class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-xl border-2 border-brand text-brand hover:bg-brand hover:text-white transition-all duration-300"
           >
             <Icon name="lucide:navigation" class="w-4 h-4" />
-            Nawiguj do nas
+            Nawiguj do mnie
           </a>
         </div>
         <div class="rounded-2xl overflow-hidden shadow-lg border border-card-border aspect-video">

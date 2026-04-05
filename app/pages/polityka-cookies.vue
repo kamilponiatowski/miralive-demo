@@ -127,7 +127,7 @@ useSeoMeta({
 
           <h2>8. Kontakt</h2>
           <p>
-            W razie pytań dotyczących plików cookies skontaktuj się z nami:
+            W razie pytań dotyczących plików cookies skontaktuj się ze mną:
             <a :href="`mailto:${business.contact.email}`">{{ business.contact.email }}</a>.
           </p>
         </div>

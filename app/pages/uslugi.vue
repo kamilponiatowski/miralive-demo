@@ -17,7 +17,7 @@ const serviceDetails: Record<string, { features: string[]; cta: string }> = {
       'Plany posagowe i oszczędnościowe dla dzieci',
       'Polisy under kredyt hipoteczny — realna ochrona, nie tylko wymóg banku',
     ],
-    cta: 'To nasza główna specjalizacja. Przeprowadzimy pełną analizę potrzeb Twojej rodziny.',
+    cta: 'To moja główna specjalizacja. Przeprowadzę pełną analizę potrzeb Twojej rodziny.',
   },
   'ubezpieczenia-komunikacyjne': {
     features: [
@@ -28,7 +28,7 @@ const serviceDetails: Record<string, { features: string[]; cta: string }> = {
       'Ubezpieczenie szyb i opon bez utraty zniżek',
       'Ochrona zniżek po pierwszej stłuczce',
     ],
-    cta: 'Porównamy ceny od kilkunastu towarzystw w jednym miejscu.',
+    cta: 'Porównam ceny od kilkunastu towarzystw w jednym miejscu.',
   },
   'ubezpieczenia-firmowe': {
     features: [
@@ -84,8 +84,8 @@ const serviceDetails: Record<string, { features: string[]; cta: string }> = {
             Usługi ubezpieczeniowe
           </h1>
           <p class="text-lg text-ink-muted leading-relaxed">
-            Oferujemy pełen zakres ubezpieczeń dla osób prywatnych, firm i zawodów medycznych.
-            Porównujemy oferty od {{ business.partners.length }}+ towarzystw, aby znaleźć najlepszą cenę i zakres.
+            Oferuję pełen zakres ubezpieczeń dla osób prywatnych, firm i zawodów medycznych.
+            Porównuję oferty od {{ business.partners.length }}+ towarzystw, aby znaleźć najlepszą cenę i zakres.
           </p>
         </div>
       </Container>
@@ -163,7 +163,7 @@ const serviceDetails: Record<string, { features: string[]; cta: string }> = {
             Nie wiesz, które ubezpieczenie wybrać?
           </h2>
           <p class="text-ink-muted mb-8">
-            Zadzwoń lub napisz — przeprowadzimy bezpłatną analizę potrzeb i dobierzemy optymalną ochronę.
+            Zadzwoń lub napisz — przeprowadzę bezpłatną analizę potrzeb i dobiorę optymalną ochronę.
           </p>
           <Button to="/kontakt#formularz" size="lg" class="pulse-brand">
             <Icon name="lucide:phone" class="w-5 h-5 mr-2" />
