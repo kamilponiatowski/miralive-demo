@@ -18,8 +18,25 @@ const formData = reactive({
 })
 
 const formStatus = ref<'idle' | 'sending' | 'success' | 'error'>('idle')
+const formErrors = reactive<Record<string, string>>({})
+
+const phonePattern = /^[+]?[\d\s()-]{7,18}$/
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+const validateForm = (): boolean => {
+  Object.keys(formErrors).forEach((k) => delete formErrors[k])
+
+  if (!formData.name.trim()) formErrors.name = 'Podaj imię i nazwisko.'
+  if (!formData.phone.trim()) formErrors.phone = 'Podaj numer telefonu.'
+  else if (!phonePattern.test(formData.phone.trim())) formErrors.phone = 'Podaj poprawny numer telefonu (tylko cyfry, spacje, +).'
+  if (formData.email && !emailPattern.test(formData.email.trim())) formErrors.email = 'Podaj poprawny adres email.'
+  if (!formData.privacy) formErrors.privacy = 'Zgoda jest wymagana.'
+
+  return Object.keys(formErrors).length === 0
+}
 
 const submitForm = async () => {
+  if (!validateForm()) return
   formStatus.value = 'sending'
   try {
     const response = await fetch('https://formsubmit.co/ajax/kontakt@miralive.pl', {
@@ -112,8 +129,10 @@ const submitForm = async () => {
                   required
                   autocomplete="name"
                   placeholder="Jan Kowalski"
-                  class="w-full px-4 py-3 rounded-xl border border-card-border bg-page text-ink placeholder:text-ink-muted/50 transition-all duration-300 focus:border-brand focus:ring-2 focus:ring-brand/20 focus:outline-none"
+                  class="w-full px-4 py-3 rounded-xl border bg-page text-ink placeholder:text-ink-muted/50 transition-all duration-300 focus:ring-2 focus:outline-none"
+                  :class="formErrors.name ? 'border-red-500 focus:border-red-500 focus:ring-red-200' : 'border-card-border focus:border-brand focus:ring-brand/20'"
                 />
+                <p v-if="formErrors.name" class="mt-1 text-sm text-red-500">{{ formErrors.name }}</p>
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -127,9 +146,12 @@ const submitForm = async () => {
                     type="tel"
                     required
                     autocomplete="tel"
+                    inputmode="tel"
                     placeholder="600 000 000"
-                    class="w-full px-4 py-3 rounded-xl border border-card-border bg-page text-ink placeholder:text-ink-muted/50 transition-all duration-300 focus:border-brand focus:ring-2 focus:ring-brand/20 focus:outline-none"
+                    class="w-full px-4 py-3 rounded-xl border bg-page text-ink placeholder:text-ink-muted/50 transition-all duration-300 focus:ring-2 focus:outline-none"
+                    :class="formErrors.phone ? 'border-red-500 focus:border-red-500 focus:ring-red-200' : 'border-card-border focus:border-brand focus:ring-brand/20'"
                   />
+                  <p v-if="formErrors.phone" class="mt-1 text-sm text-red-500">{{ formErrors.phone }}</p>
                 </div>
                 <div>
                   <label for="form-email" class="block text-sm font-medium text-ink mb-1.5">
@@ -140,9 +162,12 @@ const submitForm = async () => {
                     v-model="formData.email"
                     type="email"
                     autocomplete="email"
+                    inputmode="email"
                     placeholder="jan@example.com"
-                    class="w-full px-4 py-3 rounded-xl border border-card-border bg-page text-ink placeholder:text-ink-muted/50 transition-all duration-300 focus:border-brand focus:ring-2 focus:ring-brand/20 focus:outline-none"
+                    class="w-full px-4 py-3 rounded-xl border bg-page text-ink placeholder:text-ink-muted/50 transition-all duration-300 focus:ring-2 focus:outline-none"
+                    :class="formErrors.email ? 'border-red-500 focus:border-red-500 focus:ring-red-200' : 'border-card-border focus:border-brand focus:ring-brand/20'"
                   />
+                  <p v-if="formErrors.email" class="mt-1 text-sm text-red-500">{{ formErrors.email }}</p>
                 </div>
               </div>
 

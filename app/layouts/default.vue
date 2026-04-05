@@ -94,7 +94,7 @@ onMounted(() => {
                 {{ link.label }}
               </NuxtLink>
               <div class="mt-2 px-4">
-                <Button to="/kontakt" size="md" class="w-full justify-center">
+                <Button :href="`tel:${business.contact.phone[0].replace(/\s/g, '')}`" size="md" class="w-full justify-center">
                   <Icon name="lucide:phone" class="w-4 h-4 mr-2" />
                   Zadzwoń
                 </Button>
@@ -181,7 +181,7 @@ onMounted(() => {
                     class="text-sm text-ink-muted hover:text-brand transition-all duration-300 flex items-center gap-2"
                   >
                     <Icon name="lucide:navigation" class="w-4 h-4" />
-                    Nawiguj do nas
+                    Nawiguj do mnie
                   </a>
                 </li>
               </ul>

@@ -7,6 +7,8 @@ const DELAY_MS = 45_000
 
 const popupPhone = ref('')
 const popupConsent = ref(false)
+const popupPhoneError = ref('')
+const phonePattern = /^[+]?[\d\s()-]{7,18}$/
 
 onMounted(() => {
   if (localStorage.getItem(POPUP_KEY) || localStorage.getItem(FORM_KEY)) return
@@ -26,6 +28,15 @@ const dismiss = () => {
 }
 
 const submitPopup = async () => {
+  popupPhoneError.value = ''
+  if (!popupPhone.value.trim()) {
+    popupPhoneError.value = 'Podaj numer telefonu.'
+    return
+  }
+  if (!phonePattern.test(popupPhone.value.trim())) {
+    popupPhoneError.value = 'Podaj poprawny numer telefonu.'
+    return
+  }
   popupStatus.value = 'sending'
   try {
     const response = await fetch('https://formsubmit.co/ajax/kontakt@miralive.pl', {
@@ -125,9 +136,12 @@ const submitPopup = async () => {
                   type="tel"
                   required
                   autocomplete="tel"
+                  inputmode="tel"
                   placeholder="Twój numer telefonu"
-                  class="w-full px-4 py-3 rounded-xl border border-card-border bg-page text-ink placeholder:text-ink-muted/50 transition-all duration-300 focus:border-brand focus:ring-2 focus:ring-brand/20 focus:outline-none text-center"
+                  class="w-full px-4 py-3 rounded-xl border bg-page text-ink placeholder:text-ink-muted/50 transition-all duration-300 focus:ring-2 focus:outline-none text-center"
+                  :class="popupPhoneError ? 'border-red-500 focus:border-red-500 focus:ring-red-200' : 'border-card-border focus:border-brand focus:ring-brand/20'"
                 />
+                <p v-if="popupPhoneError" class="mt-1 text-sm text-red-500 text-left">{{ popupPhoneError }}</p>
 
                 <div class="flex items-start gap-3 text-left">
                   <input

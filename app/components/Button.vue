@@ -34,7 +34,7 @@ const classes = computed(() => [baseClasses, variantClasses[props.variant], size
   <NuxtLink v-if="to" :to="to" :class="classes">
     <slot />
   </NuxtLink>
-  <a v-else-if="href" :href="href" target="_blank" rel="noopener noreferrer" :class="classes">
+  <a v-else-if="href" :href="href" :target="href.startsWith('tel:') || href.startsWith('mailto:') ? undefined : '_blank'" :rel="href.startsWith('tel:') || href.startsWith('mailto:') ? undefined : 'noopener noreferrer'" :class="classes">
     <slot />
   </a>
   <button v-else :class="classes">
