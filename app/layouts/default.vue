@@ -46,8 +46,8 @@ onMounted(() => {
               v-for="link in navLinks"
               :key="link.to"
               :to="link.to"
-              class="px-4 py-2 text-sm font-medium text-ink-muted hover:text-brand rounded-lg transition-all duration-300 hover:bg-page-alt"
-              active-class="!text-brand !bg-brand-subtle"
+              class="px-4 py-2 text-sm font-medium text-ink-muted hover:text-brand-text rounded-lg transition-all duration-300 hover:bg-page-alt"
+              active-class="!text-brand-text !bg-brand-subtle"
             >
               {{ link.label }}
             </NuxtLink>
@@ -87,8 +87,8 @@ onMounted(() => {
                 v-for="link in navLinks"
                 :key="link.to"
                 :to="link.to"
-                class="px-4 py-3 text-sm font-medium text-ink-muted hover:text-brand rounded-lg transition-all duration-300 hover:bg-page-alt"
-                active-class="!text-brand !bg-brand-subtle"
+                class="px-4 py-3 text-sm font-medium text-ink-muted hover:text-brand-text rounded-lg transition-all duration-300 hover:bg-page-alt"
+                active-class="!text-brand-text !bg-brand-subtle"
               >
                 {{ link.label }}
               </NuxtLink>
@@ -141,7 +141,7 @@ onMounted(() => {
                 <li v-for="link in navLinks" :key="link.to">
                   <NuxtLink
                     :to="link.to"
-                    class="text-sm text-ink-muted hover:text-brand transition-all duration-300"
+                    class="text-sm text-ink-muted hover:text-brand-text transition-all duration-300"
                   >
                     {{ link.label }}
                   </NuxtLink>
@@ -156,7 +156,7 @@ onMounted(() => {
                 <li v-for="phone in business.contact.phone" :key="phone">
                   <a
                     :href="`tel:${phone.replace(/\s/g, '')}`"
-                    class="text-sm text-ink-muted hover:text-brand transition-all duration-300 flex items-center gap-2"
+                    class="text-sm text-ink-muted hover:text-brand-text transition-all duration-300 flex items-center gap-2"
                   >
                     <Icon name="lucide:phone" class="w-4 h-4" />
                     {{ phone }}
@@ -165,7 +165,7 @@ onMounted(() => {
                 <li>
                   <a
                     :href="`mailto:${business.contact.email}`"
-                    class="text-sm text-ink-muted hover:text-brand transition-all duration-300 flex items-center gap-2"
+                    class="text-sm text-ink-muted hover:text-brand-text transition-all duration-300 flex items-center gap-2"
                   >
                     <Icon name="lucide:mail" class="w-4 h-4" />
                     {{ business.contact.email }}
@@ -176,7 +176,7 @@ onMounted(() => {
                     :href="business.social.googleMaps"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="text-sm text-ink-muted hover:text-brand transition-all duration-300 flex items-center gap-2"
+                    class="text-sm text-ink-muted hover:text-brand-text transition-all duration-300 flex items-center gap-2"
                   >
                     <Icon name="lucide:navigation" class="w-4 h-4" />
                     Nawiguj do mnie
@@ -212,11 +212,11 @@ onMounted(() => {
           <!-- Social & Copyright -->
           <div class="mt-12 pt-8 border-t border-card-border">
             <div class="flex flex-wrap items-center justify-center gap-4 mb-6 text-sm">
-              <NuxtLink to="/polityka-prywatnosci" class="text-ink-muted hover:text-brand transition-all duration-300">
+              <NuxtLink to="/polityka-prywatnosci" class="text-ink-muted hover:text-brand-text transition-all duration-300">
                 Polityka prywatności
               </NuxtLink>
               <span class="text-card-border">|</span>
-              <NuxtLink to="/polityka-cookies" class="text-ink-muted hover:text-brand transition-all duration-300">
+              <NuxtLink to="/polityka-cookies" class="text-ink-muted hover:text-brand-text transition-all duration-300">
                 Polityka cookies
               </NuxtLink>
             </div>
@@ -238,7 +238,7 @@ onMounted(() => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                class="p-2 rounded-lg text-ink-muted hover:text-brand hover:bg-page-alt transition-all duration-300"
+                class="p-2 rounded-lg text-ink-muted hover:text-brand-text hover:bg-page-alt transition-all duration-300"
               >
                 <Icon name="lucide:facebook" class="w-5 h-5" />
               </a>
@@ -248,7 +248,7 @@ onMounted(() => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Google Maps"
-                class="p-2 rounded-lg text-ink-muted hover:text-brand hover:bg-page-alt transition-all duration-300"
+                class="p-2 rounded-lg text-ink-muted hover:text-brand-text hover:bg-page-alt transition-all duration-300"
               >
                 <Icon name="lucide:map-pin" class="w-5 h-5" />
               </a>

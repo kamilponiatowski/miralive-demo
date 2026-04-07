@@ -8,9 +8,9 @@ withDefaults(defineProps<Props>(), {
 })
 
 const sizeClasses: Record<string, string> = {
-  sm: 'h-7',
-  md: 'h-10',
-  lg: 'h-12',
+  sm: 'h-12',
+  md: 'h-14',
+  lg: 'h-16',
 }
 </script>
 

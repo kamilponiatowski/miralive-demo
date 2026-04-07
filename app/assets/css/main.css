@@ -6,11 +6,13 @@
 
 /* === LIGHT MODE (default) === */
 :root {
-  /* Brand: Miralive Red #E31E24 — contrast on white ~5.0:1 ✓ WCAG AA */
+  /* Brand: Miralive Red #E31E24 — contrast on white ~4.5:1 (large text / icons ✓ WCAG AA) */
   --brand: #E31E24;
   --brand-hover: #C41A1F;
   --brand-light: #F05055;
   --brand-subtle: #FEF2F2;
+  /* Darker red for small text — 6.3:1 on white, 5.8:1 on brand-subtle, 6.0:1 on bg-alt ✓ WCAG AA */
+  --brand-text: #B5181D;
   --bg: #FFFFFF;
   --bg-alt: #F8F8F8;
   --card: #FFFFFF;
@@ -24,6 +26,7 @@
   /* Brand lighter red on #121212 — contrast ~5.2:1 ✓ WCAG AA */
   --brand: #F05055;
   --brand-hover: #E31E24;
+  --brand-text: #F05055;
   --bg: #121212;
   --bg-alt: #1C1C1C;
   --card: #1E1E1E;
@@ -39,6 +42,7 @@
   --color-brand-hover: var(--brand-hover);
   --color-brand-light: var(--brand-light);
   --color-brand-subtle: var(--brand-subtle);
+  --color-brand-text: var(--brand-text);
   --color-page: var(--bg);
   --color-page-alt: var(--bg-alt);
   --color-card: var(--card);
