@@ -10,6 +10,18 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      script: [
+        {
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-W4MT7HE598',
+          async: true,
+        },
+        {
+          innerHTML: `window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W4MT7HE598');`,
+        },
+      ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
