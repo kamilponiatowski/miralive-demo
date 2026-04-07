@@ -3,7 +3,7 @@ const business = useBusinessData()
 
 useSeoMeta({
   title: `O mnie — ${business.name}`,
-  description: 'Mirosława Poniatowska — ekspert ubezpieczeń życiowych i zdrowotnych. Poznaj moją historię, specjalizację i podejście do doradztwa ubezpieczeniowego.',
+  description: 'Mirosława Poniatowska — ekspert ubezpieczeń życiowych i zdrowotnych. Poznaj moją historię, specjalizację i podejście do usług ubezpieczeniowych.',
   ogTitle: `O mnie — ${business.name}`,
   ogDescription: 'Mirosława Poniatowska — ekspert ubezpieczeń życiowych i zdrowotnych z wieloletnim doświadczeniem.',
 })

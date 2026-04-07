@@ -7,7 +7,7 @@ useSchema()
 useSeoMeta({
   title: `${business.name} — ${business.description}`,
   description: business.longDescription,
-  ogTitle: `${business.name} — Specjalistyczne Doradztwo Ubezpieczeniowe`,
+  ogTitle: `${business.name} — Specjalistyczne Usługi Ubezpieczeniowe`,
   ogDescription: business.longDescription,
 })
 </script>
