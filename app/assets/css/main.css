@@ -6,31 +6,31 @@
 
 /* === LIGHT MODE (default) === */
 :root {
-  /* Brand: Navy #1E3A5F — contrast on white ~8.5:1 ✓ WCAG AA */
-  --brand: #1E3A5F;
-  --brand-hover: #152D4A;
-  --brand-light: #5B8DB8;
-  --brand-subtle: #EBF2F8;
+  /* Brand: Miralive Red #E31E24 — contrast on white ~5.0:1 ✓ WCAG AA */
+  --brand: #E31E24;
+  --brand-hover: #C41A1F;
+  --brand-light: #F05055;
+  --brand-subtle: #FEF2F2;
   --bg: #FFFFFF;
-  --bg-alt: #F1F5F9;
+  --bg-alt: #F8F8F8;
   --card: #FFFFFF;
-  --card-border: #E2E8F0;
-  --nav-border: #E2E8F0;
-  --text: #0F172A;
-  --text-muted: #475569;
+  --card-border: #E8E8E8;
+  --nav-border: #E8E8E8;
+  --text: #1A1A1A;
+  --text-muted: #555555;
 }
 
 .dark {
-  /* Brand light on #121212 — contrast ~5.2:1 ✓ WCAG AA */
-  --brand: #5B8DB8;
-  --brand-hover: #4A7DA8;
+  /* Brand lighter red on #121212 — contrast ~5.2:1 ✓ WCAG AA */
+  --brand: #F05055;
+  --brand-hover: #E31E24;
   --bg: #121212;
   --bg-alt: #1C1C1C;
   --card: #1E1E1E;
   --card-border: #2D2D2D;
   --nav-border: #2D2D2D;
-  --text: #F1F5F9;
-  --text-muted: #94A3B8;
+  --text: #F1F1F1;
+  --text-muted: #999999;
 }
 
 /* === TAILWIND THEME MAPPING === */
@@ -54,13 +54,13 @@
 /* Hero mesh gradient */
 .hero-mesh {
   background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(30, 58, 95, 0.12), transparent),
-    radial-gradient(ellipse 60% 40% at 80% 50%, rgba(30, 58, 95, 0.06), transparent);
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(227, 30, 36, 0.07), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 50%, rgba(51, 51, 51, 0.04), transparent);
 }
 .dark .hero-mesh {
   background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(91, 141, 184, 0.1), transparent),
-    radial-gradient(ellipse 60% 40% at 80% 50%, rgba(91, 141, 184, 0.05), transparent);
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(240, 80, 85, 0.08), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 50%, rgba(153, 153, 153, 0.04), transparent);
 }
 
 /* Glassmorphism nav */
@@ -76,22 +76,22 @@
 
 /* Icon glass button */
 .icon-glass {
-  background: rgba(30, 58, 95, 0.06);
+  background: rgba(227, 30, 36, 0.07);
   border-radius: 9999px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .dark .icon-glass {
-  background: rgba(91, 141, 184, 0.1);
+  background: rgba(240, 80, 85, 0.12);
 }
 
 /* Brand glow shadow on CTA */
 .shadow-glow {
-  box-shadow: 0 4px 20px rgba(30, 58, 95, 0.25);
+  box-shadow: 0 4px 20px rgba(227, 30, 36, 0.28);
 }
 .dark .shadow-glow {
-  box-shadow: 0 4px 20px rgba(91, 141, 184, 0.2);
+  box-shadow: 0 4px 20px rgba(240, 80, 85, 0.22);
 }
 
 /* Pulsing dot (open/closed status) */
@@ -120,15 +120,15 @@
   animation: pulse-ring 2.5s ease-in-out infinite;
 }
 @keyframes pulse-ring {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(30, 58, 95, 0.3); }
-  50% { box-shadow: 0 0 0 8px rgba(30, 58, 95, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(227, 30, 36, 0.35); }
+  50% { box-shadow: 0 0 0 8px rgba(227, 30, 36, 0); }
 }
 .dark .pulse-brand {
   animation: pulse-ring-dark 2.5s ease-in-out infinite;
 }
 @keyframes pulse-ring-dark {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(91, 141, 184, 0.3); }
-  50% { box-shadow: 0 0 0 8px rgba(91, 141, 184, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(240, 80, 85, 0.35); }
+  50% { box-shadow: 0 0 0 8px rgba(240, 80, 85, 0); }
 }
 
 /* Infinite marquee scroll */

@@ -115,7 +115,7 @@ export const useBusinessData = (): BusinessData => {
       googleMaps: 'https://maps.app.goo.gl/mUaogKHgtAXYgMvz6?g_st=aw',
     },
     brand: {
-      primaryColor: '#1E3A5F',
+      primaryColor: '#E31E24',
       font: 'Inter',
     },
     trustSignals: [

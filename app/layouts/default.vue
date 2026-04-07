@@ -36,9 +36,8 @@ onMounted(() => {
       <Container>
         <nav class="flex items-center justify-between h-16 lg:h-20">
           <!-- Logo -->
-          <NuxtLink to="/" class="flex items-center gap-2 font-bold text-xl text-brand transition-all duration-300 hover:opacity-80">
-            <Icon name="lucide:shield-check" class="w-7 h-7" />
-            <span class="tracking-tight">{{ business.name }}</span>
+          <NuxtLink to="/" class="flex items-center transition-all duration-300 hover:opacity-80" aria-label="Miralive — strona główna">
+            <LogoSvg size="md" />
           </NuxtLink>
 
           <!-- Desktop nav -->
@@ -127,9 +126,8 @@ onMounted(() => {
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             <!-- Brand -->
             <div class="lg:col-span-1">
-              <NuxtLink to="/" class="flex items-center gap-2 font-bold text-lg text-brand mb-4">
-                <Icon name="lucide:shield-check" class="w-6 h-6" />
-                <span>{{ business.name }}</span>
+              <NuxtLink to="/" class="flex items-center mb-4 hover:opacity-80 transition-opacity duration-300" aria-label="Miralive — strona główna">
+                <LogoSvg size="sm" />
               </NuxtLink>
               <p class="text-sm text-ink-muted leading-relaxed">
                 {{ business.description }}
