@@ -1,8 +1,7 @@
 <script setup lang="ts">
 const show = ref(false)
 const popupStatus = ref<'idle' | 'sending' | 'success' | 'error'>('idle')
-const POPUP_KEY = 'miralive_popup_dismissed'
-const FORM_KEY = 'miralive_form_sent'
+const POPUP_DAILY_KEY = 'miralive_no_popup'
 const DELAY_MS = 45_000
 
 const popupPhone = ref('')
@@ -10,11 +9,15 @@ const popupConsent = ref(false)
 const popupPhoneError = ref('')
 const phonePattern = /^[+]?[\d\s()-]{7,18}$/
 
+const getTodayStr = () => new Date().toISOString().slice(0, 10)
+const isSuppressedToday = () => localStorage.getItem(POPUP_DAILY_KEY) === getTodayStr()
+const suppressToday = () => localStorage.setItem(POPUP_DAILY_KEY, getTodayStr())
+
 onMounted(() => {
-  if (localStorage.getItem(POPUP_KEY) || localStorage.getItem(FORM_KEY)) return
+  if (isSuppressedToday()) return
 
   const timer = setTimeout(() => {
-    if (!localStorage.getItem(POPUP_KEY) && !localStorage.getItem(FORM_KEY)) {
+    if (!isSuppressedToday()) {
       show.value = true
     }
   }, DELAY_MS)
@@ -22,8 +25,12 @@ onMounted(() => {
   onUnmounted(() => clearTimeout(timer))
 })
 
+watch(popupPhone, (val) => {
+  if (val.trim()) suppressToday()
+})
+
 const dismiss = () => {
-  localStorage.setItem(POPUP_KEY, '1')
+  suppressToday()
   show.value = false
 }
 
@@ -53,7 +60,7 @@ const submitPopup = async () => {
     })
     if (response.ok) {
       popupStatus.value = 'success'
-      localStorage.setItem(FORM_KEY, '1')
+      suppressToday()
       setTimeout(() => { show.value = false }, 2000)
     } else {
       popupStatus.value = 'error'

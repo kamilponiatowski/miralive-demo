@@ -21,8 +21,9 @@ useSeoMeta({
               Mirosława Poniatowska
             </h1>
             <p class="text-xl text-ink-muted leading-relaxed">
-              Ekspert ubezpieczeń życiowych i zdrowotnych z {{ new Date().getFullYear() - business.foundedYear }}+ latami
-              doświadczenia w branży. Prowadzę agencję {{ business.name }} we {{ business.address.city }}.
+              Ekspert ubezpieczeń życiowych i zdrowotnych — {{ new Date().getFullYear() - business.foundedYear }}+ lat
+              doświadczenia w ubezpieczeniach i 30+ lat w branży finansowej.
+              Prowadzę Multiagencję {{ business.legalName }} we {{ business.address.city }}.
             </p>
           </div>
           <div class="flex justify-center">

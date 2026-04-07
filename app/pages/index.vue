@@ -69,17 +69,6 @@ useSeoMeta({
                 loading="eager"
                 format="webp"
               />
-              <div class="absolute -bottom-4 -right-4 bg-card/90 backdrop-blur-sm border border-card-border rounded-xl p-4 shadow-lg">
-                <div class="flex items-center gap-3">
-                  <div class="icon-glass w-10 h-10">
-                    <Icon name="lucide:shield-check" class="w-5 h-5 text-brand" />
-                  </div>
-                  <div>
-                    <p class="text-sm font-semibold text-ink">{{ business.trustSignals[1].value }}</p>
-                    <p class="text-xs text-ink-muted">{{ business.trustSignals[1].label }}</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

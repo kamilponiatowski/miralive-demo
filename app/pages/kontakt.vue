@@ -51,7 +51,7 @@ const submitForm = async () => {
     })
     if (response.ok) {
       formStatus.value = 'success'
-      localStorage.setItem('miralive_form_sent', '1')
+      localStorage.setItem('miralive_no_popup', new Date().toISOString().slice(0, 10))
       formData.name = ''
       formData.phone = ''
       formData.email = ''

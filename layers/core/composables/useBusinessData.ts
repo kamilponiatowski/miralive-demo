@@ -68,7 +68,9 @@ export const useBusinessData = (): BusinessData => {
       regular: [
         { days: 'Pon-Pt', open: '09:00', close: '16:00' },
       ],
-      closed: ['Sob', 'Nd'],
+      closed: ['Sob–Nd', 'Święta'],
+      notes: 'W pilnych sprawach możesz pisać na email lub zostawić numer — oddzwonię.',
+
     },
     services: [
       {
