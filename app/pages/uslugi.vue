@@ -77,7 +77,6 @@ const serviceDetails: Record<string, {
       'Ubezpieczenie mienia firmy od ognia, kradzieży i wandalizmu',
       'Grupowe ubezpieczenia na życie — atrakcyjny benefit dla pracowników',
       'Ubezpieczenie floty pojazdów ze specjalnymi warunkami',
-      'Gwarancje ubezpieczeniowe do przetargów',
     ],
     cta: 'Kompleksowa ochrona Twojej firmy, niezależnie od branży i skali.',
   },
