@@ -26,13 +26,13 @@ useSeoMeta({
               Prowadzę Multiagencję {{ business.legalName }} we {{ business.address.city }}.
             </p>
           </div>
-          <div class="flex justify-center">
+          <div class="flex justify-center lg:justify-end w-full">
             <NuxtImg
               src="/images/poznajmy-sie.png"
               alt="Mirosława Poniatowska — ekspert ubezpieczeniowy Miralive"
-              width="480"
-              height="340"
-              class="rounded-2xl shadow-xl object-cover"
+              width="640"
+              height="360"
+              class="rounded-2xl shadow-xl w-full object-cover"
               loading="eager"
               format="webp"
             />

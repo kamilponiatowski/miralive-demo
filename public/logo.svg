@@ -1,0 +1,20 @@
+<svg width="320" height="80" viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Grupa Sygnetu (Trzy Pasy) -->
+  <g id="Symbol">
+    <rect x="10" y="15" width="10" height="50" rx="1.5" fill="#E31E24"/>
+    <rect x="26" y="15" width="10" height="50" rx="1.5" fill="#333333"/>
+    <rect x="42" y="15" width="10" height="50" rx="1.5" fill="#999999"/>
+  </g>
+  
+  <!-- Grupa Tekstowa -->
+  <g id="Typography">
+    <!-- MIRALIVE -->
+    <text x="68" y="46" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-weight="700" font-size="36" letter-spacing="-0.02em" fill="#333333">
+      MIRA<tspan fill="#E31E24">LIVE</tspan>
+    </text>
+    <!-- UBEZPIECZENIA -->
+    <text x="70" y="66" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-weight="400" font-size="13" letter-spacing="0.35em" fill="#999999">
+      UBEZPIECZENIA
+    </text>
+  </g>
+</svg>

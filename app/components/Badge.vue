@@ -10,7 +10,7 @@ withDefaults(defineProps<Props>(), {
 })
 
 const colorClasses: Record<string, string> = {
-  brand: 'bg-brand-subtle text-brand',
+  brand: 'bg-brand-subtle text-brand-text',
   green: 'bg-green-50 text-green-700 dark:bg-green-900/30 dark:text-green-400',
   red: 'bg-red-50 text-red-700 dark:bg-red-900/30 dark:text-red-400',
   blue: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',

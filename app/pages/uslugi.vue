@@ -119,15 +119,28 @@ const serviceDetails: Record<string, {
     <!-- Header -->
     <section class="bg-page-alt py-12 md:py-16">
       <Container>
-        <div class="text-center max-w-3xl mx-auto">
-          <Badge color="brand" class="mb-4">Oferta</Badge>
-          <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink mb-4">
-            Usługi ubezpieczeniowe
-          </h1>
-          <p class="text-lg text-ink-muted leading-relaxed">
-            Oferuję pełen zakres ubezpieczeń dla osób prywatnych, firm i zawodów medycznych.
-            Porównuję oferty od {{ business.partners.length }}+ towarzystw, aby znaleźć najlepszą cenę i zakres.
-          </p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <Badge color="brand" class="mb-4">Oferta</Badge>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink mb-4">
+              Usługi ubezpieczeniowe
+            </h1>
+            <p class="text-lg text-ink-muted leading-relaxed">
+              Oferuję pełen zakres ubezpieczeń dla osób prywatnych, firm i zawodów medycznych.
+              Porównuję oferty od {{ business.partners.length }}+ towarzystw, aby znaleźć najlepszą cenę i zakres.
+            </p>
+          </div>
+          <div class="flex justify-center lg:justify-end">
+            <NuxtImg
+              src="/images/uslugi.png"
+              alt="Mirosława Poniatowska z klientami — usługi ubezpieczeniowe Miralive"
+              width="480"
+              height="560"
+              class="rounded-2xl shadow-xl w-full max-w-xs lg:max-w-sm object-cover object-top"
+              loading="eager"
+              format="webp"
+            />
+          </div>
         </div>
       </Container>
     </section>

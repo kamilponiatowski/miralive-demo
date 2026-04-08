@@ -71,15 +71,28 @@ const submitForm = async () => {
     <!-- Header -->
     <section class="bg-page-alt py-12 md:py-16">
       <Container>
-        <div class="text-center max-w-3xl mx-auto">
-          <Badge color="brand" class="mb-4">Kontakt</Badge>
-          <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink mb-4">
-            Skontaktuj się ze mną
-          </h1>
-          <p class="text-lg text-ink-muted leading-relaxed">
-            Zadzwoń, napisz lub odwiedź mnie osobiście. Bezpłatna konsultacja ubezpieczeniowa
-            — przeanalizuję Twoje potrzeby i dobiorę najlepszą ochronę.
-          </p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <Badge color="brand" class="mb-4">Kontakt</Badge>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink mb-4">
+              Skontaktuj się ze mną
+            </h1>
+            <p class="text-lg text-ink-muted leading-relaxed">
+              Zadzwoń, napisz lub odwiedź mnie osobiście. Bezpłatna konsultacja ubezpieczeniowa
+              — przeanalizuję Twoje potrzeby i dobiorę najlepszą ochronę.
+            </p>
+          </div>
+          <div class="flex justify-center lg:justify-end">
+            <NuxtImg
+              src="/images/kontakt.png"
+              alt="Mirosława Poniatowska — kontakt Miralive"
+              width="480"
+              height="560"
+              class="rounded-2xl shadow-xl w-full max-w-xs lg:max-w-sm object-cover object-top"
+              loading="eager"
+              format="webp"
+            />
+          </div>
         </div>
       </Container>
     </section>
