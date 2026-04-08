@@ -98,6 +98,21 @@
   box-shadow: 0 4px 20px rgba(240, 80, 85, 0.22);
 }
 
+/* Navy CTA button — #1E3A5F on white = 12:1 contrast ✓ WCAG AAA */
+.btn-navy {
+  background-color: var(--brand-text);
+  color: #FFFFFF;
+}
+.btn-navy:hover {
+  background-color: #152D4A;
+}
+.shadow-glow-navy {
+  box-shadow: 0 4px 20px rgba(30, 58, 95, 0.30);
+}
+.dark .shadow-glow-navy {
+  box-shadow: 0 4px 20px rgba(126, 184, 232, 0.22);
+}
+
 /* Pulsing dot (open/closed status) */
 .pulse-dot {
   position: relative;
