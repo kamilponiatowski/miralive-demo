@@ -160,7 +160,7 @@ const submitPopup = async () => {
                   />
                   <label for="popup-consent" class="text-xs text-ink-muted leading-relaxed">
                     Wyrażam zgodę na kontakt telefoniczny w celu przedstawienia oferty ubezpieczeniowej. Zapoznałem/am się z
-                    <NuxtLink to="/polityka-prywatnosci" class="text-brand hover:underline font-medium" target="_blank">Polityką Prywatności</NuxtLink>.
+                    <NuxtLink to="/polityka-prywatnosci" class="text-brand-text hover:underline font-medium" target="_blank">Polityką Prywatności</NuxtLink>.
                   </label>
                 </div>
 

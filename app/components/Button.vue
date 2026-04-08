@@ -15,9 +15,9 @@ const baseClasses = 'inline-flex items-center justify-center font-semibold round
 
 const variantClasses: Record<string, string> = {
   primary: 'bg-brand text-white hover:bg-brand-hover shadow-glow',
-  outline: 'border-2 border-brand text-brand hover:bg-brand hover:text-white',
+  outline: 'border-2 border-brand text-brand-text hover:bg-brand hover:text-white',
   ghost: 'text-ink hover:bg-page-alt',
-  link: 'text-brand hover:underline',
+  link: 'text-brand-text hover:underline',
 }
 
 const sizeClasses: Record<string, string> = {

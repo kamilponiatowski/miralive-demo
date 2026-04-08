@@ -52,7 +52,7 @@ useSeoMeta({
           <ul>
             <li>Adres IP (zanonimizowany)</li>
             <li>Typ przeglądarki i urządzenia</li>
-            <li>Dane z plików cookies (patrz: <NuxtLink to="/polityka-cookies" class="text-brand hover:underline">Polityka Cookies</NuxtLink>)</li>
+            <li>Dane z plików cookies (patrz: <NuxtLink to="/polityka-cookies" class="text-brand-text hover:underline">Polityka Cookies</NuxtLink>)</li>
           </ul>
 
           <h2>3. Cele i podstawy prawne przetwarzania</h2>

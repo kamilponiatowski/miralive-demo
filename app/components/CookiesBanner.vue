@@ -38,7 +38,7 @@ const reject = () => {
             <div class="flex-1">
               <p class="text-sm text-ink leading-relaxed">
                 Używamy plików cookies, aby zapewnić prawidłowe działanie strony i zapamiętać Twoje preferencje.
-                <NuxtLink to="/polityka-cookies" class="text-brand hover:underline font-medium">
+                <NuxtLink to="/polityka-cookies" class="text-brand-text hover:underline font-medium">
                   Dowiedz się więcej
                 </NuxtLink>
               </p>

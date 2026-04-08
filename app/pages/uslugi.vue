@@ -188,7 +188,7 @@ const serviceDetails: Record<string, {
                 </ul>
                 <!-- Health benefits sub-section (Kluczowe korzyści) -->
                 <div v-if="serviceDetails[service.id]?.healthBenefits" class="mt-6 p-4 bg-page-alt rounded-xl border border-card-border">
-                  <p class="text-sm font-semibold text-brand mb-3">Kluczowe korzyści:</p>
+                  <p class="text-sm font-semibold text-brand-text mb-3">Kluczowe korzyści:</p>
                   <ul class="space-y-2">
                     <li
                       v-for="benefit in serviceDetails[service.id]!.healthBenefits"
@@ -262,7 +262,7 @@ const serviceDetails: Record<string, {
                     </div>
                     <div class="mt-4 p-4 bg-page-alt rounded-xl border border-card-border">
                       <p class="text-sm text-ink-muted">
-                        <span class="font-semibold text-brand">Ważne:</span>
+                        <span class="font-semibold text-brand-text">Ważne:</span>
                         W naszej multiagencji dopasujemy sumę ubezpieczenia tak, aby realnie pokryła koszty leczenia — nie tylko była symbolicznym zapisem na papierze.
                       </p>
                     </div>
@@ -310,7 +310,7 @@ const serviceDetails: Record<string, {
                       </li>
                     </ul>
                     <div class="p-4 bg-page-alt rounded-xl border border-card-border">
-                      <p class="text-sm font-semibold text-brand mb-1">Porównujemy oferty w jednym miejscu</p>
+                      <p class="text-sm font-semibold text-brand-text mb-1">Porównujemy oferty w jednym miejscu</p>
                       <p class="text-sm text-ink-muted">
                         Wybierając ubezpieczenie grupowe przez naszą multiagencję, porównujemy oferty od największych dostawców
                         (Lux Med, Medicover, PZU Zdrowie) — dopasowane do budżetu i branży. Przygotowujemy oferty już dla firm od 2–3 osób.

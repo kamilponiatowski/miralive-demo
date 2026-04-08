@@ -31,7 +31,7 @@ useSeoMeta({
 
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink leading-tight mb-6">
               Twoje bezpieczeństwo,
-              <span class="text-brand">moja specjalizacja</span>
+              <span class="text-brand-text">moja specjalizacja</span>
             </h1>
 
             <p class="text-lg md:text-xl text-ink-muted leading-relaxed mb-8 max-w-xl">
@@ -126,7 +126,7 @@ useSeoMeta({
             <template #footer>
               <NuxtLink
                 :to="`/uslugi#${service.id}`"
-                class="text-sm font-medium text-brand hover:underline transition-all duration-300 flex items-center gap-1"
+                class="text-sm font-medium text-brand-text hover:underline transition-all duration-300 flex items-center gap-1"
               >
                 Dowiedz się więcej
                 <Icon name="lucide:arrow-right" class="w-4 h-4" />
@@ -196,7 +196,7 @@ useSeoMeta({
             :key="signal.label"
             class="text-center"
           >
-            <p class="text-4xl md:text-5xl font-extrabold text-brand mb-2">
+            <p class="text-4xl md:text-5xl font-extrabold text-brand-text mb-2">
               {{ signal.value }}
             </p>
             <p class="text-sm text-ink-muted font-medium uppercase tracking-wider">

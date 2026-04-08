@@ -121,7 +121,6 @@ useSeoMeta({
     <section class="py-12 md:py-16">
       <Container>
         <div class="max-w-3xl mx-auto text-center">
-          <Icon name="lucide:quote" class="w-12 h-12 text-brand/20 mx-auto mb-6" />
           <blockquote class="text-xl md:text-2xl font-medium text-ink leading-relaxed italic mb-6">
             „Ubezpieczenie to jedyna rzecz, którą musisz kupić wtedy, gdy wydaje Ci się, że go nie potrzebujesz
             — bo gdy stanie się potrzebne, nie będziesz już mógł go kupić."

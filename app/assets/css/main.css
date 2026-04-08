@@ -10,9 +10,9 @@
   --brand: #E31E24;
   --brand-hover: #C41A1F;
   --brand-light: #F05055;
-  --brand-subtle: #FEF2F2;
-  /* Darker red for small text — 6.3:1 on white, 5.8:1 on brand-subtle, 6.0:1 on bg-alt ✓ WCAG AA */
-  --brand-text: #B5181D;
+  --brand-subtle: #E8EFF7;
+  /* Navy for text — #1E3A5F contrast ~12:1 on white, ~10:1 on brand-subtle ✓ WCAG AA */
+  --brand-text: #1E3A5F;
   --bg: #FFFFFF;
   --bg-alt: #F8F8F8;
   --card: #FFFFFF;
@@ -26,7 +26,7 @@
   /* Brand lighter red on #121212 — contrast ~5.2:1 ✓ WCAG AA */
   --brand: #F05055;
   --brand-hover: #E31E24;
-  --brand-text: #F05055;
+  --brand-text: #7EB8E8;
   --bg: #121212;
   --bg-alt: #1C1C1C;
   --card: #1E1E1E;

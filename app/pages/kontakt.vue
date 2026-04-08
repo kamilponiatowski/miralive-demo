@@ -202,7 +202,7 @@ const submitForm = async () => {
                   class="mt-1 h-4 w-4 rounded border-card-border text-brand focus:ring-brand/20"
                 />
                 <label for="form-privacy" class="text-sm text-ink-muted leading-relaxed">
-                  Zapoznałem/am się z <NuxtLink to="/polityka-prywatnosci" class="text-brand hover:underline font-medium" target="_blank">Polityką Prywatności</NuxtLink>
+                  Zapoznałem/am się z <NuxtLink to="/polityka-prywatnosci" class="text-brand-text hover:underline font-medium" target="_blank">Polityką Prywatności</NuxtLink>
                   i wyrażam zgodę na przetwarzanie moich danych osobowych w celu odpowiedzi na zapytanie. <span class="text-red-500">*</span>
                 </label>
               </div>
@@ -249,7 +249,7 @@ const submitForm = async () => {
                 v-for="phone in business.contact.phone"
                 :key="phone"
                 :href="`tel:${phone.replace(/\\s/g, '')}`"
-                class="block text-lg text-brand font-medium hover:underline transition-all duration-300"
+                class="block text-lg text-brand-text font-medium hover:underline transition-all duration-300"
               >
                 {{ phone }}
               </a>
@@ -265,7 +265,7 @@ const submitForm = async () => {
               <h2 class="font-semibold text-ink mb-2">Email</h2>
               <a
                 :href="`mailto:${business.contact.email}`"
-                class="text-lg text-brand font-medium hover:underline transition-all duration-300"
+                class="text-lg text-brand-text font-medium hover:underline transition-all duration-300"
               >
                 {{ business.contact.email }}
               </a>
@@ -283,7 +283,7 @@ const submitForm = async () => {
                 :href="business.social.googleMaps"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-lg text-brand font-medium hover:underline transition-all duration-300"
+                class="text-lg text-brand-text font-medium hover:underline transition-all duration-300"
               >
                 {{ business.address.street }}<br>
                 {{ business.address.postalCode }} {{ business.address.city }}
@@ -340,7 +340,7 @@ const submitForm = async () => {
             :href="business.social.googleMaps"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-xl border-2 border-brand text-brand hover:bg-brand hover:text-white transition-all duration-300"
+            class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-xl border-2 border-brand text-brand-text hover:bg-brand hover:text-white transition-all duration-300"
           >
             <Icon name="lucide:navigation" class="w-4 h-4" />
             Nawiguj do mnie
