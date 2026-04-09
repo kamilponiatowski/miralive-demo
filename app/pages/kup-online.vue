@@ -55,8 +55,31 @@ const offers: Offer[] = [
       'Ubezpieczenia zdrowotne',
       'Atrybucja agenta automatyczna',
     ],
+    discountCode: '25204',
+    discountLabel: '10% rabatu z kodem',
     ctaLabel: 'Otwórz kalkulator',
   },
+    /* ── Bezpieczny.pl podróżnik ── */
+    {
+      id: 'bezpieczny-podroznik',
+      name: 'Ubezpieczenia Podróżne',
+      insurer: 'Generali (bezpieczny.pl)',
+      description: 'Kompleksowe ubezpieczenie podróżne dla osób wyjeżdżających za granicę i aktywnych podróżników. Szeroki zakres ochrony, szybki zakup online i 10% rabatu z kodem 25204.',
+      icon: 'lucide:globe',
+      category: 'podroznik',
+      url: 'https://bezpieczny.pl/ubezpieczenia-podrozne/25204',
+      badge: 'Rabat 10%',
+      features: [
+        'Koszty leczenia za granicą',
+        'Ochrona bagażu i sprzętu sportowego',
+        'OC w życiu prywatnym',
+        'Dodatkowe opcje dla aktywnych',
+        'Szybki zakup online',
+      ],
+      discountCode: '25204',
+      discountLabel: '10% rabatu z kodem',
+      ctaLabel: 'Kup z rabatem',
+    },
   /* ── Compensa / Beesafe (kod rabatowy 109028) ── */
   {
     id: 'nnw-szkolne-beesafe',
