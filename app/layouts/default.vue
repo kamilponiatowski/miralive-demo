@@ -4,7 +4,7 @@ const business = useBusinessData()
 const navLinks = [
   { label: 'Strona główna', to: '/' },
   { label: 'Usługi', to: '/uslugi' },
-  { label: 'Kup online', to: '/oferta' },
+  { label: 'Kup online', to: '/kup-online' },
   { label: 'O mnie', to: '/o-mnie' },
   { label: 'Kontakt', to: '/kontakt' },
 ]

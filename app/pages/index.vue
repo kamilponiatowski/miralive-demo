@@ -41,19 +41,25 @@ useSeoMeta({
 
             <div class="flex flex-col gap-4">
               <div class="flex flex-col sm:flex-row gap-4">
-                <Button to="/kontakt#formularz" size="lg" class="pulse-brand">
-                  <Icon name="lucide:phone" class="w-5 h-5 mr-2" />
-                  Umów konsultację
+                <Button to="/kup-online" variant="primary" size="lg" class="pulse-brand cta-hero-btn">
+                  <Icon name="lucide:shopping-bag" class="w-5 h-5 mr-2" />
+                  Kup online
                 </Button>
-                <Button to="/uslugi" variant="outline" size="lg">
+                <Button to="/uslugi" variant="outline" size="lg" class="cta-hero-btn">
                   <Icon name="lucide:arrow-right" class="w-5 h-5 mr-2" />
                   Zobacz ofertę
                 </Button>
               </div>
-              <Button to="/kontakt#formularz" variant="ghost" size="lg" class="w-full">
-                <Icon name="lucide:message-square" class="w-5 h-5 mr-2" />
-                Zostaw kontakt
-              </Button>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <Button to="/kontakt#formularz" variant="ghost" size="lg" class="cta-hero-btn">
+                  <Icon name="lucide:message-square" class="w-5 h-5 mr-2" />
+                  Zostaw kontakt
+                </Button>
+                <Button to="/kontakt#formularz" size="lg" class="cta-hero-btn">
+                  <Icon name="lucide:phone" class="w-5 h-5 mr-2" />
+                  Umów konsultację
+                </Button>
+              </div>
             </div>
           </div>
 

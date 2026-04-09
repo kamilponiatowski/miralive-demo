@@ -1,3 +1,12 @@
+/* CTA hero buttons unified width */
+.cta-hero-btn {
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .cta-hero-btn {
+    min-width: 220px;
+  }
+}
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
