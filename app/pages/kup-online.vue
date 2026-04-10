@@ -25,13 +25,14 @@ interface Offer {
   ctaLabel?: string
 }
 
-type Category = 'rodzina' | 'drony' | 'biznes' | 'podroznik'
+type Category = 'rodzina' | 'drony' | 'biznes' | 'podroznik' | 'szkolne'
 
 const categories = [
   { id: 'all' as const, label: 'Wszystkie', icon: 'lucide:layout-grid' },
   { id: 'rodzina' as Category, label: 'Dla Rodziny', icon: 'lucide:heart' },
   { id: 'biznes' as Category, label: 'Dla Specjalisty', icon: 'lucide:briefcase' },
   { id: 'podroznik' as Category, label: 'Dla Podróżnika', icon: 'lucide:plane' },
+  { id: 'szkolne' as Category, label: 'Szkolne', icon: 'lucide:book-open' },
   { id: 'drony' as Category, label: 'Drony', icon: 'lucide:radio' },
 ]
 
@@ -87,7 +88,7 @@ const offers: Offer[] = [
     insurer: 'Beesafe (Compensa)',
     description: 'Ubezpieczenie NNW dla dzieci i młodzieży. Ochrona w szkole, na wycieczkach i zajęciach pozalekcyjnych — 24/7, z 10% rabatem.',
     icon: 'lucide:graduation-cap',
-    category: 'rodzina',
+    category: 'szkolne',
     url: 'https://beesafe.pl/ubezpieczenia-dodatkowe/ubezpieczenie-szkolne/kalkulator/?discount_code=109028',
     discountCode: '109028',
     discountLabel: '10% rabatu z kodem',
@@ -99,6 +100,23 @@ const offers: Offer[] = [
       'Assistance — pomoc po wypadku',
     ],
     ctaLabel: 'Oblicz składkę',
+  },
+  // Nowa oferta InterRisk
+  {
+    id: 'nnw-szkolne-interrisk',
+    name: 'NNW Szkolne Edu Plus',
+    insurer: 'InterRisk',
+    description: 'Ubezpieczenie NNW dla dzieci, młodzieży i studentów. Kompleksowa ochrona w placówce oświatowej, na wycieczkach i w czasie wolnym — 24/7.',
+    icon: 'lucide:graduation-cap',
+    category: 'szkolne',
+    url: 'https://klient.interrisk.pl/EduPlusOfertaIndywidualna?agent=SEVONDUy',
+    features: [
+      'Ochrona 24/7 — w szkole i poza nią',
+      'Wyczynowe uprawianie sportów w cenie',
+      'Pokrycie kosztów leczenia i rehabilitacji',
+      'Szybki zakup online',
+    ],
+    ctaLabel: 'Sprawdź ofertę',
   },
   /* ── Leadenhall ── */
   {
