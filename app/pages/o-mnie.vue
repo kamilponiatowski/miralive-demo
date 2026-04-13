@@ -23,7 +23,7 @@ useSeoMeta({
             <p class="text-xl text-ink-muted leading-relaxed">
               Ekspert ubezpieczeń życiowych i zdrowotnych — {{ new Date().getFullYear() - business.foundedYear }}+ lat
               doświadczenia w ubezpieczeniach i 30+ lat w branży finansowej.
-              Prowadzę Multiagencję {{ business.legalName }} we {{ business.address.city }}.
+              Prowadzę Multiagencję {{ business.legalName }} we Włocławku.
             </p>
           </div>
           <div class="flex justify-center lg:justify-end w-full">
