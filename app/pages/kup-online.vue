@@ -39,6 +39,25 @@ const categories = [
 const activeCategory = ref<'all' | Category>('all')
 
 const offers: Offer[] = [
+  /* ── Generali (eshop — portal agenta) ── */
+  {
+    id: 'generali-eshop',
+    name: 'Sklep Generali',
+    insurer: 'Generali',
+    description: 'Oficjalny portal agenta Generali — kup online ubezpieczenie komunikacyjne, życiowe, domowe, podróżne, NNW i więcej. Link automatycznie przypisuje polisę do mnie jako Twojego agenta.',
+    icon: 'lucide:shield',
+    category: 'rodzina',
+    url: 'https://eshop.generali.pl/partner/1721091',
+    badge: 'Pełna oferta',
+    features: [
+      'Życie i zdrowie — ochrona dla całej rodziny',
+      'OC/AC samochodu i pomoc drogowa',
+      'Ubezpieczenie domu i mieszkania',
+      'Podróże i koszty rezygnacji z wyjazdu',
+      'NNW indywidualne i szkolne',
+    ],
+    ctaLabel: 'Otwórz sklep Generali',
+  },
   /* ── Compensa / Beesafe (kod rabatowy 109028) ── */
   /* ── Generali (bezpieczny.pl) ── */
   {

@@ -35,14 +35,17 @@
   /* Brand lighter red on #121212 — contrast ~5.2:1 ✓ WCAG AA */
   --brand: #F05055;
   --brand-hover: #E31E24;
+  /* brand-text #7EB8E8 on dark brand-subtle #172535 → ~6.2:1 ✓ WCAG AA */
   --brand-text: #7EB8E8;
+  --brand-subtle: #172535;
   --bg: #121212;
   --bg-alt: #1C1C1C;
   --card: #1E1E1E;
   --card-border: #2D2D2D;
-  --nav-border: #2D2D2D;
+  --nav-border: #3A3A3A;
   --text: #F1F1F1;
-  --text-muted: #999999;
+  /* #ADADAD on #121212 → ~8.2:1 ✓ WCAG AA for nav links */
+  --text-muted: #ADADAD;
 }
 
 /* === TAILWIND THEME MAPPING === */
